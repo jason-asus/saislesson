@@ -7,10 +7,14 @@
 body {
   text-align: center;
 }
-
+.title {
+  color: orchid;
+  font-size: 36px;
+  margin-top: 10px;
+}
 .img-friends {
   width: 80%;
-  margin: 0 auto;
+  margin: 30px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 10px;
