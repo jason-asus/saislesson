@@ -9,12 +9,12 @@ body {
 }
 .title {
   font-size: 36px;
-  color: orchid;
+  color: rgb(218, 195, 112);
   margin: 30px auto;
 }
 .intro {
   width: 80%;
-  color: brown;
+  color: rgb(42, 165, 114);
   margin: 30px auto;
 }
 
