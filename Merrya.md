@@ -5,3 +5,5 @@ I like to skate.
 I like to eat ice cream.
 I am 8 years old.
 I am in grade 3.
+I like cat.
+I like play game.
