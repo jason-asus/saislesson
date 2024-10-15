@@ -8,10 +8,16 @@ body {
   text-align: center;
 }
 .title {
-  color: orchid;
   font-size: 36px;
-  margin-top: 10px;
+  color: orchid;
+  margin: 30px auto;
 }
+.intro {
+  width: 80%;
+  color: brown;
+  margin: 30px auto;
+}
+
 .img-friends {
   width: 80%;
   margin: 30px auto;
