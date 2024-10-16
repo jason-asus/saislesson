@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: sans-serif;
   background-size: cover;
 }
 label {
@@ -16,6 +16,8 @@ label {
   padding: 0 50px;
   font-weight: bold;
 }
+
+/* nav-bar */
 nav {
   background-color: #ba68c8;
   height: 80px;
@@ -47,27 +49,15 @@ a:hover {
 }
 
 main {
-  margin: 50px;
-  text-align: center;
-}
-
-.clock {
-  color: rgb(209, 35, 168);
-  font-size: 60px;
-  font-weight: 800;
-  letter-spacing: 7px;
-}
-
-/* friends */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  /* width: 80%; */
+  margin: 30px auto;
 }
 
 .text-center {
   text-align: center;
 }
+
+/* friends */
 
 .title {
   color: orchid;
@@ -77,10 +67,18 @@ main {
 }
 .paraph {
   color: rgb(188, 125, 186);
-  font-size: 18px;
+  font-size: 16px;
   width: 80%;
   margin: 30px auto;
 }
+.paraph:hover {
+  color: rgb(188, 125, 186);
+  font-size: 20px;
+  width: 80%;
+  margin: 30px auto;
+  text-shadow: 1px 0px 1px rgb(188, 125, 186);
+}
+
 .img-friends {
   width: 80%;
   margin: 30px auto;
