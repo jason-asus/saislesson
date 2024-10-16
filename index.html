@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rosy</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div class="title">I am Amy. I am playing with my friends.</div>
-    <div class="intro">
-    I am Amy.I am playing with my friend.My friend Amy like cats,dogs and sharks.Amy like black and blue.
-    </div>
-    <div class="img-friends">
-      <img src="images/friend1.jpg" />
-      <img src="images/friend2.jpg" />
-      <img src="images/friend3.jpg" />
-      <img src="images/friend4.jpg" />
-      <img src="images/friend5.jpg" />
-      <img src="images/friend6.jpg" />
-      <img src="images/friend7.jpg" />
-      <img src="images/friend8.jpg" />
-    </div>
-    <script src="" async defer></script>
+    <nav>
+      <label>Rosy</label>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+          <a href="/friends">friends</a>
+          <a href="/pet">Pet</a>
+          <a href="/hobby">Hobby</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="text-center">
+      <div class="title">Hi, I am Rosy. Welcome to visit my website!</div>
+
+      <div class="paraph">
+        I am Rosy. I like black and white. I like to eat sushi. I am a girl. I
+        have a sister and a brother.
+      </div>
+      <div class="paraph">
+        My favorite subject is english and math. I like to go to school.
+      </div>
+      <img src="./rosy.jpg" width="40%" />
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </main>
+
+    <script src="./index.js" async defer></script>
   </body>
 </html>
