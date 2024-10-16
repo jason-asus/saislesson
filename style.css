@@ -19,7 +19,7 @@ label {
 
 /* nav-bar */
 nav {
-  background-color: #ba68c8;
+  background-color: #27c6bc;
   height: 80px;
   width: 100%;
 }
@@ -44,7 +44,7 @@ nav ul li a {
 
 a.active,
 a:hover {
-  background-color: #ce93d8;
+  background-color: #81d9e2;
   transition: 0.5s;
 }
 
@@ -60,23 +60,23 @@ main {
 /* friends */
 
 .title {
-  color: orchid;
+  color: #14c6ba;
   font-size: 36px;
   width: 80%;
   margin: 30px auto;
 }
 .paraph {
-  color: rgb(188, 125, 186);
+  color: #0a887f;
   font-size: 16px;
   width: 80%;
   margin: 10px auto;
 }
 .paraph:hover {
-  color: rgb(188, 125, 186);
+  color: r#0a887f;
   font-size: 20px;
   width: 80%;
   margin: 30px auto;
-  text-shadow: 1px 0px 1px rgb(188, 125, 186);
+  text-shadow: 1px 0px 1px #0a887f;
 }
 
 .img-friends {
@@ -93,5 +93,5 @@ main {
 .img-friends img:hover {
   transform: scale(0.8) rotate(-15deg);
   border-radius: 15px;
-  box-shadow: 5px 10px 20px rgb(188, 139, 187);
+  box-shadow: 5px 10px 20px #0a887f;
 }
