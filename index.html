@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Judy</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div class="title">I am Judy. I am playing with my friends.</div>
-    <div class="intro">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui
-      exercitationem eius voluptates impedit eos, dicta in, tenetur labore illum
-      repellendus facilis facere sapiente ducimus et, quibusdam obcaecati. Sunt
-      sit perspiciatis quasi delectus. Pariatur ducimus exercitationem
-      voluptatem eaque accusantium enim veniam. Odit maxime, est nisi dolorum
-      facilis harum eum officia veritatis!
-    </div>
-    <div class="img-friends">
-      <img src="images/friend1.jpg" />
-      <img src="images/friend2.jpg" />
-      <img src="images/friend3.jpg" />
-      <img src="images/friend4.jpg" />
-      <img src="images/friend5.jpg" />
-      <img src="images/friend6.jpg" />
-      <img src="images/friend7.jpg" />
-      <img src="images/friend8.jpg" />
-    </div>
-    <script src="" async defer></script>
+    <nav>
+      <label>Judy</label>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+          <a href="/friends">friends</a>
+          <a href="/pet">Pet</a>
+          <a href="/hobby">Hobby</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="text-center">
+      <div class="title">Hi, I am Judy. Welcome to visit my website!</div>
+
+      <div class="paraph">
+        I love the color blue. I like to eat pizza. I like my toys.
+      </div>
+      <div class="paraph">
+        I am 6 years old. I am in the 2nd grade. I like maths.
+      </div>
+      <img src="./judy.jpg" width="40%" />
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </main>
+
+    <script src="./index.js" async defer></script>
   </body>
 </html>
