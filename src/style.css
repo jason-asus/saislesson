@@ -4,9 +4,8 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  --nav-color: rgb(218, 82, 202);
-  --title-color: rgb(218, 82, 202);
-  --paraph-color: rgb(131, 20, 118);
+  --nav-color: rgb(230, 51, 200);
+  --title-color: rgb(230, 51, 200);
 }
 
 body {
@@ -50,8 +49,8 @@ nav ul li a {
 
 a.active,
 a:hover {
-  /* background-color: lighten(red, 30%); */
-  filter: brightness(30%);
+  background-color: rgb(160, 160, 160);
+
   transition: 0.5s;
 }
 
@@ -59,7 +58,7 @@ a:hover {
 
 main {
   /* width: 80%; */
-  margin: 30px auto;
+  margin: 10px auto;
 }
 
 .text-center {
@@ -78,16 +77,6 @@ main {
   text-shadow: 1px 0px 1px var(--title-color);
 }
 
-.paraph {
-  color: var(--paraph-color);
-  font-size: 16px;
-  width: 80%;
-  margin: 10px auto;
-}
-.paraph:hover {
-  text-shadow: 1px 0px 1px var(--paraph-color);
-}
-
 .img-friends {
   width: 80%;
   margin: 30px auto;
@@ -102,7 +91,7 @@ main {
 .img-friends img:hover {
   transform: scale(0.8) rotate(-15deg);
   border-radius: 15px;
-  box-shadow: 5px 10px 20px var(--paraph-color);
+  box-shadow: 5px 10px 20px var(--title-color);
 }
 
 /* home */

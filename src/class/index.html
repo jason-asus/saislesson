@@ -10,7 +10,43 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <!--  -->
+    <style>
+      .teacher {
+        /* width: 90%; */
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      .teacher-text {
+        width: 50%;
+      }
+      .teacher-text-title {
+        width: 60%;
+        color: var(--title-color);
+        font-size: 50px;
+        margin-bottom: 5px;
+      }
+      .teacher-text-subtitle {
+        width: 60%;
+        color: var(--title-color);
+        font-size: 25px;
+        margin-bottom: 50px;
+      }
+
+      p {
+        color: #999;
+      }
+      p:hover {
+        color: var(--title-color);
+      }
+
+      .teacher-img {
+        width: 15%;
+        margin: 20px;
+      }
+    </style>
+
+    <!-- nav-bar -->
     <nav>
       <label>Judy</label>
       <ul>
@@ -22,8 +58,25 @@
         </li>
       </ul>
     </nav>
-    <!--  -->
-    <div class="title text-center">On building...</div>
+    <!-- main -->
+    <main>
+      <div class="teacher">
+        <div class="teacher-text">
+          <div class="teacher-text-title">SAIS GRADE 2</div>
+          <div class="teacher-text-subtitle">we are amazing</div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+            mollitia laborum officia libero quaerat modi consequatur error sed
+            ipsam tenetur culpa voluptatibus minima repudiandae hic
+            exercitationem, quo eligendi illo quibusdam molestiae impedit,
+            voluptas temporibus esse provident voluptatem. Veritatis, eveniet
+            cupiditate perspiciatis eos omnis, tempore minima facilis, esse
+            reprehenderit sequi dignissimos?
+          </p>
+        </div>
+        <img src="/src/Judy.jpg" alt="" class="teacher-img" />
+      </div>
+    </main>
 
     <script src="" async defer></script>
   </body>
