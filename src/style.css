@@ -67,6 +67,7 @@ main {
   font-size: 36px;
   width: 80%;
   margin: 10px auto;
+  text-transform: uppercase;
 }
 .title:hover {
   text-shadow: 1px 0px 1px var(--primary-color);
