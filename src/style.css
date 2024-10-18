@@ -5,7 +5,7 @@
   list-style: none;
   box-sizing: border-box;
   --nav-color: rgb(218, 82, 202);
-  --title-color: rgb(131, 20, 118);
+  --title-color: rgb(218, 82, 202);
   --paraph-color: rgb(131, 20, 118);
 }
 
@@ -109,5 +109,12 @@ main {
 
 /* friends */
 
-/* school */
+/* class */
+
+.grid-s {
+  display: grid;
+  grid-template-rows: 100px 100px;
+  grid-template-columns: 200px 200px;
+}
+
 /* coding */
