@@ -4,11 +4,17 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  --nav-color: rgb(218, 82, 202);
+  --title-color: rgb(131, 20, 118);
+  --paraph-color: rgb(131, 20, 118);
 }
+
 body {
   font-family: sans-serif;
   background-size: cover;
 }
+
+/* kid name */
 label {
   color: white;
   font-size: 25px;
@@ -19,7 +25,7 @@ label {
 
 /* nav-bar */
 nav {
-  background-color: #ba68c8;
+  background-color: var(--nav-color);
   height: 80px;
   width: 100%;
 }
@@ -44,9 +50,12 @@ nav ul li a {
 
 a.active,
 a:hover {
-  background-color: #ce93d8;
+  /* background-color: lighten(red, 30%); */
+  filter: brightness(30%);
   transition: 0.5s;
 }
+
+/* main */
 
 main {
   /* width: 80%; */
@@ -57,26 +66,26 @@ main {
   text-align: center;
 }
 
-/* friends */
+/* text  */
 
 .title {
-  color: orchid;
+  color: var(--title-color);
   font-size: 36px;
   width: 80%;
   margin: 30px auto;
 }
+.title:hover {
+  text-shadow: 1px 0px 1px var(--title-color);
+}
+
 .paraph {
-  color: rgb(188, 125, 186);
+  color: var(--paraph-color);
   font-size: 16px;
   width: 80%;
   margin: 10px auto;
 }
 .paraph:hover {
-  color: rgb(188, 125, 186);
-  font-size: 20px;
-  width: 80%;
-  margin: 30px auto;
-  text-shadow: 1px 0px 1px rgb(188, 125, 186);
+  text-shadow: 1px 0px 1px var(--paraph-color);
 }
 
 .img-friends {
@@ -93,5 +102,12 @@ main {
 .img-friends img:hover {
   transform: scale(0.8) rotate(-15deg);
   border-radius: 15px;
-  box-shadow: 5px 10px 20px rgb(188, 139, 187);
+  box-shadow: 5px 10px 20px var(--paraph-color);
 }
+
+/* home */
+
+/* friends */
+
+/* school */
+/* coding */
