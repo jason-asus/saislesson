@@ -17,7 +17,23 @@
         margin: 5px auto;
       }
       p:hover {
-        color: var(--title-color);
+        color: var(--light-color);
+      }
+      .img-friends {
+        width: 80%;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 10px;
+      }
+      .img-friends img {
+        width: 100%;
+        cursor: pointer;
+      }
+      .img-friends img:hover {
+        transform: scale(0.8) rotate(-15deg);
+        border-radius: 15px;
+        box-shadow: 5px 10px 20px var(--light-color);
       }
     </style>
     <!--  -->
