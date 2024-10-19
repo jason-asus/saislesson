@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amy</title>
+    <link rel="stylesheet" type="text/css" href="/src/style.css" />
+  </head>
+  <body>
+    <style>
+      p {
+        width: 60%;
+        margin: 20px auto;
+        color: #999;
+      }
+      p:hover {
+        color: var(--light-color);
+      }
+    </style>
+    <nav>
+      <label>Amy</label>
+      <ul>
+        <li>
+          <a href="/src/">Home</a>
+          <a href="/src/friends">friends</a>
+          <a href="/src/class">class</a>
+          <a href="/src/coding">coding</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="text-center">
+      <div class="title">Hi, I am Amy. Welcome to visit my website!</div>
+
+      <p>
+        I’m Amy. I like math. I like Rosy and Judy. I like dogs and cats. My
+        favorite food is pizza. My favorite place is Shanghai.
+      </p>
+      <img src="/src/Amy.jpg" width="40%" />
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </main>
+
+    <script src="/src/index.js" async defer></script>
+  </body>
+</html>
