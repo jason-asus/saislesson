@@ -4,8 +4,8 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  --primary-color: rgb(223, 107, 213);
-  --p-color: hsl(327, 84%, 34%);
+  --primary-color: hsl(176, 67%, 46%);
+  --p-color: hsl(178, 59%, 9%);
 }
 
 body {
