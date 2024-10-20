@@ -5,7 +5,7 @@
   list-style: none;
   box-sizing: border-box;
   --primary-color: hsl(176, 67%, 46%);
-  --p-color: hsl(176, 67%, 30%);
+  --light-color: hsl(176, 67%, 60%);
 }
 
 body {
@@ -49,7 +49,8 @@ nav ul li a {
 
 a.active,
 a:hover {
-  background-color: color-mix(in oklab, var(--primary-color) 70%, white);
+  background-color: var(--light-color);
+
   transition: 0.5s;
 }
 
@@ -64,23 +65,10 @@ main {
 .title {
   color: var(--primary-color);
   font-size: 36px;
+  width: 80%;
+  margin: 10px auto;
   text-transform: uppercase;
 }
 .title:hover {
   text-shadow: 1px 0px 1px var(--primary-color);
-}
-
-.subtitle {
-  color: var(--primary-color);
-  font-size: 25px;
-}
-.subtitle:hover {
-  text-shadow: 1px 0px 1px var(--primary-color);
-}
-
-p {
-  color: var(--p-color);
-}
-p:hover {
-  text-shadow: 0.5px 0px 0.5px var(--p-color);
 }

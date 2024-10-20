@@ -11,6 +11,10 @@
       p {
         width: 60%;
         margin: 20px auto;
+        color: #999;
+      }
+      p:hover {
+        color: var(--light-color);
       }
     </style>
     <nav>
@@ -32,6 +36,7 @@
         favorite food is pizza. My favorite place is Shanghai.
       </p>
       <img src="/src/Amy.jpg" width="40%" />
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
     </main>
 
     <script src="/src/index.js" async defer></script>
