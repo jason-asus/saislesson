@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ethan</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <style>
+      p {
+        color: #999;
+        width: 80%;
+        margin: 5px auto;
+      }
+      p:hover {
+        color: var(--light-color);
+      }
+      .img-friends {
+        width: 80%;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 10px;
+      }
+      .img-friends img {
+        width: 100%;
+        cursor: pointer;
+      }
+      .img-friends img:hover {
+        transform: scale(0.8) rotate(-15deg);
+        border-radius: 15px;
+        box-shadow: 5px 10px 20px var(--light-color);
+      }
+    </style>
+    <!-- nav-bar -->
+    <nav>
+      <label>Ethan</label>
+      <ul>
+        <li>
+          <a href="/src/">Home</a>
+          <a href="/src/friends">friends</a>
+          <a href="/src/class">class</a>
+          <a href="/src/coding">coding</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- main -->
+    <main class="text-center">
+      <div class="title">playing with my friends</div>
+      <p>
+        I am 12 years old and I have a little sister that is 10 years old. and
+        here is some pictures of us.
+      </p>
+      <div class="img-friends">
+        <img src="/src/friends/images/friend1.jpg" />
+        <img src="/src/friends/images/friend2.jpg" />
+        <img src="/src/friends/images/friend3.jpg" />
+        <img src="/src/friends/images/friend4.jpg" />
+        <img src="/src/friends/images/friend5.jpg" />
+        <img src="/src/friends/images/friend6.jpg" />
+        <img src="/src/friends/images/friend7.jpg" />
+        <img src="/src/friends/images/friend8.jpg" />
+      </div>
+    </main>
+    <script src="" async defer></script>
+  </body>
+</html>
