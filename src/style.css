@@ -5,7 +5,8 @@
   list-style: none;
   box-sizing: border-box;
   --primary-color: hsl(310, 78%, 50%);
-  --light-color: hsl(310, 78%, 70%);
+  --p-color: hsl(327, 84%, 34%);
+  --p-hover-color: hsl(327, 84%, 50%);
 }
 
 body {
@@ -65,10 +66,20 @@ main {
 .title {
   color: var(--primary-color);
   font-size: 36px;
-  width: 80%;
-  margin: 10px auto;
   text-transform: uppercase;
 }
 .title:hover {
   text-shadow: 1px 0px 1px var(--primary-color);
+}
+
+.subtitle {
+  color: var(--primary-color);
+  font-size: 25px;
+}
+
+p {
+  color: var(--p-color);
+}
+p:hover {
+  color: var(--p-hover-color);
 }
