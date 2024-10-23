@@ -10,7 +10,38 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <!--  -->
+    <style>
+      /* class section */
+      .cls {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      /* text_30% + img_45% = 75%  */
+      .cls-text {
+        width: 45%;
+      }
+      .cls-img {
+        width: 30%;
+        margin: 5px 20px;
+      }
+
+      /* button */
+      #btn {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        border-radius: 5px;
+        width: 100px;
+        margin: 30px 1px;
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+      .mb-30 {
+        margin-bottom: 30px;
+      }
+    </style>
+
+    <!-- nav-bar -->
     <nav>
       <label>Peppa</label>
       <ul>
@@ -22,9 +53,27 @@
         </li>
       </ul>
     </nav>
-    <!--  -->
-    <div class="title text-center">On building...</div>
-
-    <script src="" async defer></script>
+    <!-- main -->
+    <main>
+      <!-- class -->
+      <div class="cls">
+        <div class="cls-text">
+          <div class="title">music visualizer</div>
+          <div class="subtitle mb-30">Try my homebrew music visualizer</div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+            mollitia laborum officia libero quaerat modi consequatur error sed
+            ipsam tenetur culpa voluptatibus minima repudiandae hic
+            exercitationem, quo eligendi illo quibusdam molestiae impedit,
+            voluptas temporibus esse provident voluptatem. Veritatis, eveniet
+            cupiditate perspiciatis eos omnis, tempore minima facilis, esse
+            reprehenderit sequi dignissimos
+          </p>
+          <button type="button" id="btn">TRY IT</button>
+        </div>
+        <img src="/src/class/G2.jpg" class="cls-img" />
+      </div>
+    </main>
+    <script src="/src/coding/index.js" async defer></script>
   </body>
 </html>
