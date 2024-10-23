@@ -69,11 +69,15 @@
             cupiditate perspiciatis eos omnis, tempore minima facilis, esse
             reprehenderit sequi dignissimos
           </p>
-          <button type="button" id="btn">TRY IT</button>
+          <button type="button" id="btn" onclick="NewTab()">TRY IT</button>
         </div>
         <img src="/src/class/G2.jpg" class="cls-img" />
       </div>
     </main>
-    <script src="/src/coding/index.js" async defer></script>
+    <script>
+      function NewTab() {
+        window.open("/src/coding/mv.html", "_blank")
+      }
+    </script>
   </body>
 </html>

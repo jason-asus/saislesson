@@ -1,0 +1,31 @@
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: burlywood;
+}
+
+#cnvs {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: black;
+}
+
+#control {
+  display: block;
+  width: 50%;
+  margin: 10px auto;
+}
+
+#fileload {
+  display: block;
+  width: 25%;
+  margin: 10px auto;
+  z-index: 100;
+  background-color: aquamarine;
+}
