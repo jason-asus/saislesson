@@ -46,9 +46,23 @@ fileload.addEventListener("change", function () {
 // Music Visualiser function
 function musicVisualiser(bufferLenght, x, barWidth, barHeight, dataArr) {
   for (let i = 0; i < bufferLenght; i++) {
-    barHeight = dataArr[i] / 2
-    ctx.fillStyle = "white"
-    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight)
+    barHeight = dataArr[i]
+
+    ctx.save()
+    ctx.translate(canvas.width / 2, canvas.height / 2)
+    ctx.rotate((i * bufferLenght) / 2)
+    ctx.lineWidth = barHeight / 15
+    const hue = (i * 360 * 2) / bufferLenght
+
+    // ctx.fillStyle = "hsl(" + hue + ",100%,50%)"
+    // ctx.fillRect(0, 0, barWidth / 4, barHeight / 2)
+
+    ctx.strokeStyle = "hsl(" + hue + ",100%,50%)"
+    ctx.beginPath()
+    ctx.moveTo(0, barHeight / 5)
+    ctx.lineTo(barHeight / 5, barHeight / 4)
+    ctx.stroke()
     x += barWidth
+    ctx.restore()
   }
 }
