@@ -5,13 +5,7 @@ const fileload = document.getElementById("fileload")
 let audioSource
 let analyser
 
-container.addEventListener("click", function () {
-  //   audio1.play()
-})
-
 fileload.addEventListener("change", function () {
-  // load and play music file
-  console.log("load file", this.files)
   const audio1 = document.getElementById("audio1")
   audio1.src = URL.createObjectURL(this.files[0])
   audio1.load()
