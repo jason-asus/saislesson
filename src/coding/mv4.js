@@ -1,5 +1,5 @@
 /** settings */
-const NUMBER_OF_SAMPLES = 256
+const NUMBER_OF_SAMPLES = 2048
 
 //canvas
 const container = document.getElementById("container")
@@ -31,7 +31,8 @@ fileload.addEventListener("change", function () {
   let barHeight
   let x
 
-  function animate() {
+    // draw recursion
+  ;(function animate() {
     x = 0
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     analyser.getByteFrequencyData(dataArr) // array of values , each represents volume of the frequency
@@ -39,8 +40,8 @@ fileload.addEventListener("change", function () {
     musicVisualiser(bufferLenght, x, barWidth, barHeight, dataArr) //mv
 
     requestAnimationFrame(animate)
-  }
-  animate()
+  })()
+  // animate()
 })
 
 // Music Visualiser function
@@ -49,37 +50,14 @@ function musicVisualiser(bufferLenght, x, barWidth, barHeight, dataArr) {
     barHeight = dataArr[i] * 2
 
     ctx.save()
+    ctx.translate(canvas.width / 2, canvas.height / 2)
+    ctx.rotate((i * Math.PI * 2 * 16) / bufferLenght)
+    // ctx.lineWidth = barHeight / 15
 
-    // white block
-    ctx.fillStyle = "white"
-    ctx.fillRect(
-      canvas.width / 2 - x,
-      canvas.height - barHeight - 10,
-      barWidth,
-      10
-    )
-    ctx.fillRect(
-      canvas.width / 2 + x,
-      canvas.height - barHeight - 10,
-      barWidth,
-      10
-    )
-
-    // color bars
-    const hue = (360 * i) / bufferLenght
+    const hue = (360 / NUMBER_OF_SAMPLES) * i * 2.5
     ctx.fillStyle = "hsl(" + hue + ",80%,50%)"
-    ctx.fillRect(
-      canvas.width / 2 - x,
-      canvas.height - barHeight,
-      barWidth,
-      barHeight
-    )
-    ctx.fillRect(
-      canvas.width / 2 + x,
-      canvas.height - barHeight,
-      barWidth,
-      barHeight
-    )
+
+    ctx.fillRect(0, 0, barWidth * 12, barHeight / 1.5)
 
     x += barWidth
     ctx.restore()
