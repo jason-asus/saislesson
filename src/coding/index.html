@@ -4,15 +4,46 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Travis</title>
+    <title>Peppa</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <!--  -->
+    <style>
+      /* mv section */
+      .mv {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      /* text_30% + img_45% = 75%  */
+      .mv-text {
+        width: 45%;
+      }
+      .mv-img {
+        width: 30%;
+        margin: 5px 20px;
+      }
+
+      /* button */
+      #btn {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        border-radius: 5px;
+        width: 100px;
+        margin: 30px 1px;
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+      .mb-30 {
+        margin-bottom: 30px;
+      }
+    </style>
+
+    <!-- nav-bar -->
     <nav>
-      <label>Travis</label>
+      <label>Peppa</label>
       <ul>
         <li>
           <a href="/src/">Home</a>
@@ -22,9 +53,31 @@
         </li>
       </ul>
     </nav>
-    <!--  -->
-    <div class="title text-center">On building...</div>
-
-    <script src="" async defer></script>
+    <!-- main -->
+    <main>
+      <!-- mv2 -->
+      <div class="mv mb-30">
+        <div class="mv-text">
+          <div class="title">music visualiser 2</div>
+          <div class="subtitle mb-30">Try my homebrew music visualiser</div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+            mollitia laborum officia libero quaerat modi consequatur error sed
+            ipsam tenetur culpa voluptatibus minima repudiandae hic
+            exercitationem, quo eligendi illo quibusdam molestiae impedit,
+            voluptas temporibus esse provident voluptatem. Veritatis, eveniet
+            cupiditate perspiciatis eos omnis, tempore minima facilis, esse
+            reprehenderit sequi dignissimos
+          </p>
+          <button type="button" id="btn" onclick="play('mv2')">PLAY</button>
+        </div>
+        <img src="/src/coding/mv2.png" class="mv-img" />
+      </div>
+    </main>
+    <script>
+      function play(mv) {
+        window.open("/src/coding/" + mv + ".html", "_blank")
+      }
+    </script>
   </body>
 </html>
