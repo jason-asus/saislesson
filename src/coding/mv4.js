@@ -2,7 +2,7 @@
 const NUMBER_OF_SAMPLES = 2048
 
 //canvas
-const container = document.getElementById("container")
+
 const canvas = document.getElementById("cnvs")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight

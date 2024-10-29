@@ -1,4 +1,3 @@
-const container = document.getElementById("container")
 const canvas = document.getElementById("cnvs")
 const ctx = canvas.getContext("2d")
 const fileload = document.getElementById("fileload")

@@ -2,7 +2,6 @@
 const NUMBER_OF_SAMPLES = 256
 
 //canvas
-const container = document.getElementById("container")
 const canvas = document.getElementById("cnvs")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
