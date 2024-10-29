@@ -1,3 +1,6 @@
+const NUMBER_OF_SAMPLES = 256
+const ROTATE = 1 / 3
+
 const canvas = document.getElementById("cnvs")
 const ctx = canvas.getContext("2d")
 const fileload = document.getElementById("fileload")
@@ -16,7 +19,7 @@ fileload.addEventListener("change", function () {
   analyser = audioContext.createAnalyser()
   audioSource.connect(analyser)
   analyser.connect(audioContext.destination)
-  analyser.fftSize = 64
+  analyser.fftSize = NUMBER_OF_SAMPLES
   const bufferLenght = analyser.frequencyBinCount
   const dataArr = new Uint8Array(bufferLenght)
 
@@ -43,7 +46,7 @@ function musicVisualiser(bufferLenght, x, barWidth, barHeight, dataArr) {
 
     ctx.save()
     ctx.translate(canvas.width / 2, canvas.height / 2)
-    ctx.rotate((i * bufferLenght) / 2)
+    ctx.rotate(i * bufferLenght * ROTATE)
     ctx.lineWidth = barHeight / 15
     const hue = (i * 360 * 2) / bufferLenght
 
