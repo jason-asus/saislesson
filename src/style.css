@@ -5,7 +5,7 @@
   list-style: none;
   box-sizing: border-box;
   --primary-color: hsl(219, 100%, 50%);
-  --p-color: hsl(221, 45%, 60%);
+  --p-color: hsl(193, 100%, 50%);
 }
 
 body {
@@ -15,7 +15,7 @@ body {
 
 /* kid name */
 label {
-  color: white;
+  color: rgb(152, 209, 245);
   font-size: 25px;
   line-height: 80px;
   padding: 0 50px;
