@@ -10,7 +10,38 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <!--  -->
+    <style>
+      /* mv section */
+      .mv {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      /* text_30% + img_45% = 75%  */
+      .mv-text {
+        width: 45%;
+      }
+      .mv-img {
+        width: 30%;
+        margin: 5px 20px;
+      }
+
+      /* button */
+      #btn {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        border-radius: 5px;
+        width: 100px;
+        margin: 30px 1px;
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+      .mb-30 {
+        margin-bottom: 30px;
+      }
+    </style>
+
+    <!-- nav-bar -->
     <nav>
       <label>Martin</label>
       <ul>
@@ -22,9 +53,33 @@
         </li>
       </ul>
     </nav>
-    <!--  -->
-    <div class="title text-center">On building...</div>
-
-    <script src="" async defer></script>
+    <!-- main -->
+    <main>
+      <!-- music flower -->
+      <div class="mv mb-30">
+        <div class="mv-text">
+          <div class="title">music flower</div>
+          <div class="subtitle mb-30">the flower blooming with music</div>
+          <p>Look, the flower is dancing with the music.</p>
+          <button type="button" id="btn" onclick="play('mv1')">PLAY</button>
+        </div>
+        <img src="/src/coding/mv1.png" class="mv-img" />
+      </div>
+      <!-- music spring -->
+      <div class="mv mb-30">
+        <div class="mv-text">
+          <div class="title">music spring</div>
+          <div class="subtitle mb-30">Springing with music</div>
+          <p>See, we can 'see' the music spring like a hot spring!</p>
+          <button type="button" id="btn" onclick="play('mv4')">PLAY</button>
+        </div>
+        <img src="/src/coding/mv4.png" class="mv-img" />
+      </div>
+    </main>
+    <script>
+      function play(mv) {
+        window.open("/src/coding/" + mv + ".html", "_blank")
+      }
+    </script>
   </body>
 </html>
