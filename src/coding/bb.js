@@ -1,11 +1,11 @@
 // You can personize your bubbles by setting the values below
 const settings = {
   canvas: null,
-  radius: 10,
+  radius: 30,
   radiusAdd: 40,
   bubbleNumber: 50,
-  color: 300,
-  velocity: 1,
+  color: 200,
+  velocity:50,
 }
 // SETTINGS END HERE
 
