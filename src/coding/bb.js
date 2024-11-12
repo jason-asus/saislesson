@@ -1,17 +1,19 @@
-// You can personize your tank bubbles by setting the values below
+// You can personize your bubbles by setting the values below
 const settings = {
+  canvas: null,
   radius: 10,
   radiusAdd: 40,
   bubbleNumber: 50,
   color: 300,
   velocity: 1,
 }
-// END HERE
+// SETTINGS END HERE
 
 const canvas = document.getElementById("cnvs")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 const ctx = canvas.getContext("2d")
+settings.canvas = canvas
 
 ctx.strokeStyle = "black"
 
@@ -47,18 +49,20 @@ class Particle {
 }
 
 class Effect {
-  constructor(canvas, settings) {
+  constructor(settings) {
+    const { canvas, radius, radiusAdd, bubbleNumber, color, velocity } =
+      settings
     this.canvas = canvas
     this.width = this.canvas.width
     this.height = this.canvas.height
     this.particles = []
 
     // settings
-    this.radius = settings.radius
-    this.radiusAdd = settings.radiusAdd
-    this.NumberOfParticles = settings.bubbleNumber
-    this.velocity = settings.velocity
-    this.color = settings.color
+    this.radius = radius
+    this.radiusAdd = radiusAdd
+    this.NumberOfParticles = bubbleNumber
+    this.velocity = velocity
+    this.color = color
 
     // create particles
     this.createParticles()
@@ -76,7 +80,7 @@ class Effect {
   }
 }
 
-const effect = new Effect(canvas, settings)
+const effect = new Effect(settings)
 effect.handleParticles(ctx)
 
 function animate() {
