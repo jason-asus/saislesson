@@ -77,8 +77,6 @@ class Effect {
 }
 
 const effect = new Effect(canvas, settings)
-// effect.NumberOfParticles = BUBBLE_NUMBER
-// effect.createParticles()
 effect.handleParticles(ctx)
 
 function animate() {
