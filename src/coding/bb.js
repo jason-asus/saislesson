@@ -20,12 +20,12 @@ ctx.strokeStyle = "black"
 class Particle {
   constructor(effect) {
     this.effect = effect
-    this.radius = Math.random() * this.effect.radiusAdd + this.effect.radius
-    this.x = this.radius + Math.random() * (this.effect.width - this.radius * 2)
-    this.y =
-      this.radius + Math.random() * (this.effect.height - this.radius * 2)
-    this.vx = Math.random() * this.effect.velocity
-    this.vy = Math.random() * this.effect.velocity
+    const { width, height, radiusAdd, radius, velocity } = effect // into local short name
+    this.radius = Math.random() * radiusAdd + radius
+    this.x = this.radius + Math.random() * (width - this.radius * 2)
+    this.y = this.radius + Math.random() * (height - this.radius * 2)
+    this.vx = Math.random() * velocity
+    this.vy = Math.random() * velocity
   }
 
   draw(context) {
@@ -52,27 +52,23 @@ class Effect {
   constructor(settings) {
     const { canvas, radius, radiusAdd, bubbleNumber, color, velocity } =
       settings
-    this.canvas = canvas
-    this.width = this.canvas.width
-    this.height = this.canvas.height
-    this.particles = []
-
-    // settings
+    this.width = canvas.width
+    this.height = canvas.height
     this.radius = radius
     this.radiusAdd = radiusAdd
-    this.NumberOfParticles = bubbleNumber
+    this.bubbleNumber = bubbleNumber
     this.velocity = velocity
     this.color = color
 
-    // create particles
-    this.createParticles()
+    this.particles = [] // Array for saving particles objects
+    this.createParticles() // Method: create particles
   }
   createParticles() {
-    for (let i = 0; i < this.NumberOfParticles; i++) {
+    for (let i = 0; i < this.bubbleNumber; i++) {
       this.particles.push(new Particle(this))
     }
   }
-  handleParticles(context) {
+  drawThenUpdateParticles(context) {
     this.particles.forEach((particle) => {
       particle.draw(context)
       particle.update()
@@ -81,11 +77,11 @@ class Effect {
 }
 
 const effect = new Effect(settings)
-effect.handleParticles(ctx)
+effect.drawThenUpdateParticles(ctx)
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  effect.handleParticles(ctx)
+  effect.drawThenUpdateParticles(ctx)
   requestAnimationFrame(animate)
 }
 animate()
