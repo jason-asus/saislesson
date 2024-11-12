@@ -4,8 +4,8 @@ const settings = {
   radius: 10,
   radiusAdd: 40,
   bubbleNumber: 50,
-  color: 300,
-  velocity: 1,
+  color: 185,
+  velocity: 99,
 }
 // SETTINGS END HERE
 
