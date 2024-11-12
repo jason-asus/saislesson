@@ -2,10 +2,10 @@
 const settings = {
   canvas: null,
   radius: 10,
-  radiusAdd: 40,
-  bubbleNumber: 50,
-  color: 300,
-  velocity: 1,
+  radiusAdd: 10,
+  bubbleNumber: 55,
+  color: 200,
+  velocity: 45
 }
 // SETTINGS END HERE
 
