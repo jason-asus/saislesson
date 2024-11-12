@@ -1,29 +1,31 @@
-// You can personize your tank bubbles by setting the values below
+// You can personize your bubbles by setting the values below
 const settings = {
+  canvas: null,
   radius: 10,
   radiusAdd: 40,
   bubbleNumber: 50,
   color: 300,
   velocity: 1,
 }
-// END HERE
+// SETTINGS END HERE
 
 const canvas = document.getElementById("cnvs")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 const ctx = canvas.getContext("2d")
+settings.canvas = canvas
 
 ctx.strokeStyle = "black"
 
 class Particle {
   constructor(effect) {
     this.effect = effect
-    this.radius = Math.random() * this.effect.radiusAdd + this.effect.radius
-    this.x = this.radius + Math.random() * (this.effect.width - this.radius * 2)
-    this.y =
-      this.radius + Math.random() * (this.effect.height - this.radius * 2)
-    this.vx = Math.random() * this.effect.velocity
-    this.vy = Math.random() * this.effect.velocity
+    const { width, height, radiusAdd, radius, velocity } = effect // into local short name
+    this.radius = Math.random() * radiusAdd + radius
+    this.x = this.radius + Math.random() * (width - this.radius * 2)
+    this.y = this.radius + Math.random() * (height - this.radius * 2)
+    this.vx = Math.random() * velocity
+    this.vy = Math.random() * velocity
   }
 
   draw(context) {
@@ -47,28 +49,26 @@ class Particle {
 }
 
 class Effect {
-  constructor(canvas, settings) {
-    this.canvas = canvas
-    this.width = this.canvas.width
-    this.height = this.canvas.height
-    this.particles = []
+  constructor(settings) {
+    const { canvas, radius, radiusAdd, bubbleNumber, color, velocity } =
+      settings
+    this.width = canvas.width
+    this.height = canvas.height
+    this.radius = radius
+    this.radiusAdd = radiusAdd
+    this.bubbleNumber = bubbleNumber
+    this.velocity = velocity
+    this.color = color
 
-    // settings
-    this.radius = settings.radius
-    this.radiusAdd = settings.radiusAdd
-    this.NumberOfParticles = settings.bubbleNumber
-    this.velocity = settings.velocity
-    this.color = settings.color
-
-    // create particles
-    this.createParticles()
+    this.particles = [] // Array for saving particles objects
+    this.createParticles() // Method: create particles
   }
   createParticles() {
-    for (let i = 0; i < this.NumberOfParticles; i++) {
+    for (let i = 0; i < this.bubbleNumber; i++) {
       this.particles.push(new Particle(this))
     }
   }
-  handleParticles(context) {
+  drawThenUpdateParticles(context) {
     this.particles.forEach((particle) => {
       particle.draw(context)
       particle.update()
@@ -76,14 +76,12 @@ class Effect {
   }
 }
 
-const effect = new Effect(canvas, settings)
-// effect.NumberOfParticles = BUBBLE_NUMBER
-// effect.createParticles()
-effect.handleParticles(ctx)
+const effect = new Effect(settings)
+effect.drawThenUpdateParticles(ctx)
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  effect.handleParticles(ctx)
+  effect.drawThenUpdateParticles(ctx)
   requestAnimationFrame(animate)
 }
 animate()
