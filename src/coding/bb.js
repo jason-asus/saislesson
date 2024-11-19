@@ -2,11 +2,11 @@
 const settings = {
   canvas: null,
   radius: 10,
-  radiusAdd: 40,
+  radiusAdd: 100,
   bubbleNumber: 50,
-  velocity: 1,
-  bubbleColor: "rgb(219, 112, 246)", // 0 - 255
-  backgroundColor: "rgb(158, 231, 221)", // 0 - 255
+  velocity: 80,
+  bubbleColor: "rgb(175, 35, 35)", // 0 - 255
+  backgroundColor: "rgb(35, 175, 82)", // 0 - 255
 }
 // SETTINGS END HERE
 
