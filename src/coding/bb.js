@@ -4,14 +4,16 @@ const settings = {
   radius: 10,
   radiusAdd: 40,
   bubbleNumber: 50,
-  color: 185,
-  velocity: 99,
+  velocity: 1,
+  bubbleColor: "rgb(219, 112, 246)", // 0 - 255
+  backgroundColor: "rgb(158, 231, 221)", // 0 - 255
 }
 // SETTINGS END HERE
 
 const canvas = document.getElementById("cnvs")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
+canvas.style.background = settings.backgroundColor
 const ctx = canvas.getContext("2d")
 settings.canvas = canvas
 
@@ -29,7 +31,7 @@ class Particle {
   }
 
   draw(context) {
-    context.fillStyle = "hsl(" + (this.effect.color % 360) + ",100%,50%)"
+    context.fillStyle = settings.bubbleColor
 
     context.beginPath()
     context.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
