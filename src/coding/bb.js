@@ -4,9 +4,9 @@ const settings = {
   radius: 10,
   radiusAdd: 40,
   bubbleNumber: 50,
-  velocity: 1,
-  bubbleColor: "rgb(219, 112, 246)", // 0 - 255
-  backgroundColor: "rgb(158, 231, 221)", // 0 - 255
+  velocity: 50,
+  bubbleColor: "rgb(74, 228, 22)", // 0 - 
+  backgroundColor: "rgb(78, 75, 77)", // 0 - 255
 }
 // SETTINGS END HERE
 
@@ -17,7 +17,7 @@ canvas.style.background = settings.backgroundColor
 const ctx = canvas.getContext("2d")
 settings.canvas = canvas
 
-ctx.strokeStyle = "black"
+ctx.strokeStyle = "cyan"
 
 class Particle {
   constructor(effect) {
