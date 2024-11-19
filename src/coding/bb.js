@@ -1,12 +1,12 @@
 // You can personize your bubbles by setting the values below
 const settings = {
   canvas: null,
-  radius: 10,
-  radiusAdd: 40,
-  bubbleNumber: 50,
-  velocity: 1,
-  bubbleColor: "rgb(219, 112, 246)", // 0 - 255
-  backgroundColor: "rgb(158, 231, 221)", // 0 - 255
+  radius: 40,
+  radiusAdd: 41,
+  bubbleNumber: 21,
+  velocity: 20,
+  bubbleColor: "rgb(0, 0, 255)", // 0 - 255
+  backgroundColor: "rgb(0, 234, 255)", // 0 - 255
 }
 // SETTINGS END HERE
 
@@ -17,7 +17,7 @@ canvas.style.background = settings.backgroundColor
 const ctx = canvas.getContext("2d")
 settings.canvas = canvas
 
-ctx.strokeStyle = "black"
+ctx.strokeStyle = "blue"
 
 class Particle {
   constructor(effect) {
