@@ -55,6 +55,23 @@
     </nav>
     <!-- main -->
     <main>
+      <!-- hello -->
+      <div class="mv mb-30">
+        <div class="mv-text">
+          <div class="title">Hello</div>
+          <div class="subtitle mb-30">bubbles in the fish tank</div>
+          <p>
+            Hi! This is my design, BUBBLES IN THE FISH TANK. You may ask me why
+            the water is green and the bubbles are pink? Well, there is no
+            reason. I just like the colors. They match well and look bueatiful.
+            I like watching the pink bubbles floating elegantly in the light
+            green water.
+          </p>
+          <button type="button" id="btn" onclick="play('hello')">PLAY</button>
+        </div>
+        <img src="/src/coding/hello.png" class="mv-img" />
+      </div>
+
       <!-- bubble -->
       <div class="mv mb-30">
         <div class="mv-text">
@@ -71,6 +88,7 @@
         </div>
         <img src="/src/coding/bb.png" class="mv-img" />
       </div>
+
       <!-- music flower -->
       <div class="mv mb-30">
         <div class="mv-text">
@@ -103,8 +121,8 @@
       </div>
     </main>
     <script>
-      function play(mv) {
-        window.open("/src/coding/" + mv + ".html", "_blank")
+      function play(app) {
+        window.open("/src/coding/" + app + ".html", "_blank")
       }
     </script>
   </body>
