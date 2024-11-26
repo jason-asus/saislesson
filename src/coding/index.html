@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Rosy</title>
+    <title>Coding</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/src/style.css" />
@@ -43,7 +43,7 @@
 
     <!-- nav-bar -->
     <nav>
-      <label>Rosy</label>
+      <label>My Coding Show</label>
       <ul>
         <li>
           <a href="/src/">Home</a>
@@ -55,6 +55,22 @@
     </nav>
     <!-- main -->
     <main>
+      <!-- motto -->
+      <div class="mv mb-30">
+        <div class="mv-text">
+          <div class="title">Motto</div>
+          <div class="subtitle mb-30">My best motto</div>
+          <p>
+            slow and steady wins the race is my best motto. I am sure you are
+            all familiar with the story of the tortoise and the hare. As the
+            fable goes, the tortoise and hare were in a race. The tortoise kept
+            running slowly, ultimately, won!
+          </p>
+          <button type="button" id="btn" onclick="play('motto')">PLAY</button>
+        </div>
+        <img src="/src/coding/motto.png" class="mv-img" />
+      </div>
+
       <!-- bubble -->
       <div class="mv mb-30">
         <div class="mv-text">
@@ -71,6 +87,7 @@
         </div>
         <img src="/src/coding/bb.png" class="mv-img" />
       </div>
+
       <!-- music flower -->
       <div class="mv mb-30">
         <div class="mv-text">
@@ -103,8 +120,8 @@
       </div>
     </main>
     <script>
-      function play(mv) {
-        window.open("/src/coding/" + mv + ".html", "_blank")
+      function play(app) {
+        window.open("/src/coding/" + app + ".html", "_blank")
       }
     </script>
   </body>
