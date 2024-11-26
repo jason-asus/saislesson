@@ -1,12 +1,12 @@
 /**
  *  You set your style values below
  */
-const FIRST_LINE = "Slow and steady"
-const SECOND_LINE = "win the game"
+const FIRST_LINE = "Hi guys"
+const SECOND_LINE = "I am Judy Huang"
 const RADIUS = 50
 const PSIZE = 3
 const WORD_SIZE = 14
-const STROKE_COLOR = "255, 20, 20"
+const STROKE_COLOR = "162, 223, 170"
 const DOT_COLOR = "8, 1, 221"
 
 /**
