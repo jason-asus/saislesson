@@ -1,13 +1,13 @@
 /**
  *  You set your style values below
  */
-const FIRST_LINE = "Slow and steady"
-const SECOND_LINE = "win the game"
+const FIRST_LINE = " Never put"
+const SECOND_LINE = "Pineapple on Pizza"
 const RADIUS = 50
 const PSIZE = 3
 const WORD_SIZE = 14
-const STROKE_COLOR = "255, 20, 20"
-const DOT_COLOR = "8, 1, 221"
+const STROKE_COLOR = "0, 94, 255"
+const DOT_COLOR = "0, 234, 255"
 
 /**
  * No Pains No Gains
