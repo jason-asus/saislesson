@@ -1,13 +1,13 @@
 /**
  *  You set your style values below
  */
-const FIRST_LINE = "Slow and steady"
-const SECOND_LINE = "win the game"
-const RADIUS = 50
-const PSIZE = 3
-const WORD_SIZE = 14
-const STROKE_COLOR = "255, 20, 20"
-const DOT_COLOR = "8, 1, 221"
+ Start LINE = "vivenne" 
+ SECOND_LINE = "is amzaing"
+ RADIUS = 50
+ PSIZE = 0
+size = 14
+ STROKE_COLOR = "255, 20, 20"
+  DOT_COLOR = "20"
 
 /**
  * No Pains No Gains
