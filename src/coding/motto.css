@@ -1,5 +1,5 @@
 .colors {
-  color: rgb(158, 231, 221);
+  color: rgb(158, 123, 214);
 }
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-  background: rgb(15, 15, 15);
+  background: rgb(224, 159, 223);
   overflow: hidden;
 }
 

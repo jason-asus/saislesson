@@ -1,13 +1,13 @@
 /**
  *  You set your style values below
  */
-const FIRST_LINE = "Slow and steady"
-const SECOND_LINE = "win the game"
+const FIRST_LINE = "Hi, I am Rosy Yang"
+const SECOND_LINE = "I am 8 years old"
 const RADIUS = 50
 const PSIZE = 3
 const WORD_SIZE = 14
-const STROKE_COLOR = "255, 20, 20"
-const DOT_COLOR = "8, 1, 221"
+const STROKE_COLOR = "158, 123, 214"
+const DOT_COLOR = "158, 123, 214"
 
 /**
  * No Pains No Gains
@@ -47,7 +47,7 @@ ctx.fillText(FIRST_LINE, 0, WORD_SIZE)
 ctx.fillText(SECOND_LINE, 0, WORD_SIZE * 2)
 const imageData = ctx.getImageData(0, 0, 2000, 2000)
 const my_gradient = ctx.createLinearGradient(0, 0, 170, 0)
-my_gradient.addColorStop(0, "white")
+my_gradient.addColorStop(0, "red")
 my_gradient.addColorStop(1, "#beec40d2")
 
 class Particle {
