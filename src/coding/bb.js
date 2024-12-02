@@ -5,7 +5,7 @@ const settings = {
   radiusAdd: 40,
   bubbleNumber: 50,
   velocity: 1,
-  bubbleColor: "rgb(219, 112, 246)", // 0 - 255
+  bubbleColor: "rgba(219, 112, 246,0.8)", // 0 - 255
   backgroundColor: "rgb(158, 231, 221)", // 0 - 255
 }
 // SETTINGS END HERE
@@ -37,6 +37,7 @@ class Particle {
     context.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
     context.fill()
     context.stroke()
+    context.closePath()
   }
 
   update() {
