@@ -1,28 +1,23 @@
 /**
  *  You set your style values below
  */
-const FIREWORK_NUMBER = 50
+const FIREWORK_NUMBER = 20
 const GRAVITY = 0.1
-const FRICTION = 0.99
+const FRICTION_SPARKLE = 0.99
 const FRICTION_SHOOT = 0.98
-const SPARKLE_LIFE = 200
-const SPARKLE_FLOWER = 15
-const EXPLODE_SPEED = 2
+const SPARKLE_LIFE = 120
+const SPARKLE_FLOWER = 12
+const EXPLODE_SPEED = 1.5
+const SHOOT_LENGTH = 4
+const SPARKLE_LENGTH = 10
+
+/** Keep the codes unchanged */
 
 canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-let particleArray = []
-
-ctx.fillStyle = "White"
-// ctx.font = `oblique 500 ${WORD_SIZE}px sans-serif`
-ctx.strokeStyle = "white"
-ctx.stroke = 255
-ctx.strokeWeight = 4
-
-const SHOOT_LENGTH = 4
 class Shoot {
   constructor(x, y, vx, vy, friction, gravity, color) {
     this.x = x
@@ -43,7 +38,10 @@ class Shoot {
     this.y += this.vy
 
     this.tail.push({ x: this.x, y: this.y })
-    if (this.tail.length > SHOOT_LENGTH) this.tail.shift()
+    if (this.tail.length > SHOOT_LENGTH) {
+      this.tail.shift()
+      this.tail.shift()
+    }
   }
 
   draw() {
@@ -59,9 +57,8 @@ class Shoot {
   }
 }
 
-const SPARKLE_LENGTH = 10
 class Sparkle {
-  constructor(x, y, vx, vy, friction, gravity, color) {
+  constructor(x, y, vx, vy, friction, gravity, color, life) {
     this.x = x
     this.y = y
     this.vx = vx
@@ -69,8 +66,8 @@ class Sparkle {
     this.friction = friction
     this.gravity = gravity
     this.tail = []
-    this.life = SPARKLE_LIFE
     this.color = color
+    this.life = life
   }
 
   update() {
@@ -83,7 +80,10 @@ class Sparkle {
       this.y += this.vy
 
       this.tail.push({ x: this.x, y: this.y })
-      if (this.tail.length > SPARKLE_LENGTH) this.tail.shift()
+      if (this.tail.length > SPARKLE_LENGTH) {
+        this.tail.shift()
+        this.tail.shift()
+      }
     } else {
       this.tail = []
     }
@@ -139,8 +139,9 @@ function animate() {
   for (let i = 0; i < shoots.length; i++) {
     shoots[i].update()
     shoots[i].draw()
-    if (shoots[i].vy > 0 && shoots[i].vy < GRAVITY) {
-      const v = (Math.random() + 1) * EXPLODE_SPEED
+    // if (shoots[i].vy > 0 && shoots[i].vy < GRAVITY) {
+    if (shoots[i].vy > 0) {
+      const v = (Math.random() * 2 + 1) * EXPLODE_SPEED
       for (let j = 1; j < SPARKLE_FLOWER; j++) {
         sparkles.push(
           new Sparkle(
@@ -148,13 +149,15 @@ function animate() {
             shoots[i].y,
             v * Math.cos((Math.PI * 2 * j) / SPARKLE_FLOWER),
             v * Math.sin((Math.PI * 2 * j) / SPARKLE_FLOWER),
-            FRICTION,
+            FRICTION_SPARKLE,
             GRAVITY,
-            shoots[i].color
+            shoots[i].color,
+            SPARKLE_LIFE
           )
         )
-        // limit 100 sparkles
-        if (sparkles.length > 100) {
+
+        if (sparkles.length > FIREWORK_NUMBER * SPARKLE_FLOWER) {
+          sparkles.shift()
           sparkles.shift()
         }
       }
@@ -169,11 +172,4 @@ function animate() {
   requestAnimationFrame(animate)
 }
 
-animate()
-
-/**
- * f  friction
- * v  velocity
- * g  gravity
- *
- */
+animate() // Launch
