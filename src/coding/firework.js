@@ -1,13 +1,9 @@
 /**
  *  You set your style values below
  */
-// const FIRST_LINE = "Slow and steady"
-// const SECOND_LINE = "win the game"
-// const RADIUS = 50
-// const PSIZE = 3
-// const WORD_SIZE = 14
-// const STROKE_COLOR = "255, 20, 20"
-// const DOT_COLOR = "8, 1, 221"
+const FIREWORK_NUMBER = 5
+const GRAVITY = 0.2
+const FRICTION = 0.99
 
 canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
@@ -22,89 +18,144 @@ ctx.strokeStyle = "white"
 ctx.stroke = 255
 ctx.strokeWeight = 4
 
-// ctx.strokeRect(0, 0, 100, 100)
-// ctx.fillText(FIRST_LINE, 0, WORD_SIZE)
-// ctx.fillText(SECOND_LINE, 0, WORD_SIZE * 2)
-// const imageData = ctx.getImageData(0, 0, 2000, 2000)
-// const my_gradient = ctx.createLinearGradient(0, 0, 170, 0)
-// my_gradient.addColorStop(0, "white")
-// my_gradient.addColorStop(1, "#beec40d2")
-
-class Particle {
-  constructor(x, y) {
-    this.position = { x, y }
-    this.velocity = { x: 0, y: 0 }
-    this.acceleration = { x: 0, y: 0 }
-  }
-  applyForce(force) {
-    this.acceleration.add(force)
+class Shoot {
+  constructor(x, y, vx, vy, friction, gravity) {
+    this.x = x
+    this.y = y
+    this.vx = vx
+    this.vy = vy
+    this.friction = friction
+    this.gravity = gravity
+    this.tail = []
   }
 
   update() {
-    this.velocity.x += this.acceleration.x
-    this.velocity.y += this.acceleration.y
+    this.vx *= this.friction
+    this.vy = this.vy * this.friction + this.gravity
 
-    // this.position.add(this.velocity)
-    this.position.x += this.velocity.x
-    this.position.y += this.velocity.y
+    this.x += this.vx
+    this.y += this.vy
 
-    // this.acceleration = { x: 0, y: 0 }
+    this.tail.push({ x: this.x, y: this.y })
+    if (this.tail.length > 4) this.tail.shift()
   }
 
-  drawParticle() {
-    ctx.fillStyle = this.color
+  draw() {
+    ctx.fillStyle = "yellow"
     ctx.beginPath()
-    ctx.ellipse(
-      this.position.x,
-      this.position.y,
-      5,
-      5,
-      Math.PI / 4,
-      0,
-      2 * Math.PI
-    )
+
+    for (let i = 0; i < this.tail.length; i++) {
+      ctx.arc(this.tail[i].x, this.tail[i].y, 0.8 * i, 0, 2 * Math.PI)
+    }
+
     ctx.closePath()
     ctx.fill()
   }
-  particleMotion() {
-    let dx = mouse.x - this.x
-    let dy = mouse.y - this.y
-    let distance = Math.sqrt(dx * dx + dy * dy)
-    let cosTheta = dx / distance
-    let sinTheta = dy / distance
-    let speedOfMotion = 1 - distance / mouse.radius
-    let directionX = cosTheta * speedOfMotion * this.density
-    let directionY = sinTheta * speedOfMotion * this.density
+}
 
-    if (distance < mouse.radius) {
-      this.x -= directionX
-      this.y -= directionY
-      this.interaction = true
-    } else {
-      this.interaction = false
-      if (this.x !== this.originalX) {
-        let dx = this.x - this.originalX
-        this.x -= dx / 10
-      }
-      if (this.y !== this.originalY) {
-        let dy = this.y - this.originalY
-        this.y -= dy / 10
-      }
+class Sparkle {
+  constructor(x, y, vx, vy, friction, gravity) {
+    this.x = x
+    this.y = y
+    this.vx = vx
+    this.vy = vy
+    this.friction = friction
+    this.gravity = gravity
+    this.tail = []
+  }
+
+  update() {
+    this.vx *= this.friction
+    this.vy = this.vy * this.friction + this.gravity
+
+    this.x += this.vx
+    this.y += this.vy
+
+    this.tail.push({ x: this.x, y: this.y })
+    if (this.tail.length > 4) this.tail.shift()
+  }
+
+  draw() {
+    ctx.fillStyle = "red"
+    ctx.beginPath()
+
+    ctx.arc(this.x, this.y, 5, 0, 2 * Math.PI) //
+
+    for (let i = 0; i < this.tail.length; i++) {
+      ctx.arc(this.x, this.y, 5 * i, 0, 2 * Math.PI)
     }
+
+    ctx.closePath()
+    ctx.fill()
   }
 }
 
-const firework = new Particle(Math.random() * canvas.width, canvas.height)
-firework.velocity.y = -2
-firework.acceleration.y = -1
+let shoots = []
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  // clear particles that have droped out of the bottom line
+  shoots = shoots.filter((f) => {
+    return f.y <= canvas.height && f.y > 0 && f.vy < 0.05
+  })
+
+  if (Math.random() < FIREWORK_NUMBER / 100) {
+    let vx = 10 * Math.random()
+    if (vx % 2 == 1) vx * -1
+
+    let vy = -(10 * Math.random() + 15)
+
+    const shoot = new Shoot(
+      Math.random() * canvas.width,
+      canvas.height,
+      vx,
+      vy,
+      FRICTION,
+      GRAVITY
+    )
+
+    shoots.push(shoot)
+  }
+
   //
-  firework.update()
-  firework.drawParticle()
+  let sparkle
+  for (let i = 0; i < shoots.length; i++) {
+    shoots[i].update()
+    shoots[i].draw()
+    if (shoots[i].vy > 0) {
+      console.log(shoots[i].vy) //ttt
+
+      sparkle = new Sparkle(
+        // shoots[i].x,
+        // shoots[i].y,
+        // Math.random() * 3,
+        // Math.random() * 3,
+        300,
+        300,
+        1,
+        1,
+        FRICTION,
+        GRAVITY
+      )
+      console.log("sparkle.x", sparkle.x) //
+    }
+  }
+
+  if (sparkle) {
+    console.log("sparkle.y", sparkle.y)
+    sparkle.update()
+    sparkle.draw()
+  }
 
   requestAnimationFrame(animate)
 }
 
 animate()
+
+/**
+ * f  friction
+ * v  velocity
+ * g  gravity
+ *
+ */
