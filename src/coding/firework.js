@@ -6,9 +6,9 @@ const SHOOT_LENGTH = 50
 const SPARKLE_LIFE = 300
 const SPARKLE_FLOWER = 20
 const EXPLODE_SPEED = 20
-const SPARKLE_LENGTH = 20
+const SPARKLE_LENGTH = 30
 const SPARKLE_HEAD = 2.5
-const WIND = -0.02
+const WIND = 0.80
 
 /** Keep below unchanged */
 
