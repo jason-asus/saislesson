@@ -1,13 +1,14 @@
 /**
  *  You set your style values below
  */
-const FIRST_LINE = " Never put"
-const SECOND_LINE = "Pineapple on Pizza"
+const FIRST_LINE = " I am edward."
+const SECOND_LINE = "I win the game."
 const RADIUS = 50
 const PSIZE = 3
 const WORD_SIZE = 14
-const STROKE_COLOR = "0, 94, 255"
-const DOT_COLOR = "0, 234, 255"
+const STROKE_COLOR = "184, 158, 231"
+const DOT_COLOR = "8, 1, 221"
+const MOUSE_COLOR = "71, 12, 223"
 
 /**
  * No Pains No Gains
@@ -48,7 +49,7 @@ ctx.fillText(SECOND_LINE, 0, WORD_SIZE * 2)
 const imageData = ctx.getImageData(0, 0, 2000, 2000)
 const my_gradient = ctx.createLinearGradient(0, 0, 170, 0)
 my_gradient.addColorStop(0, "white")
-my_gradient.addColorStop(1, "#beec40d2")
+my_gradient.addColorStop(1, `rgb(${MOUSE_COLOR})`)
 
 class Particle {
   constructor(x, y, color, psize) {
