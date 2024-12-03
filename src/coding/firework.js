@@ -8,7 +8,7 @@ const SPARKLE_FLOWER = 200
 const EXPLODE_SPEED = 20
 const SPARKLE_LENGTH = 20
 const SPARKLE_HEAD = 2.5
-const WIND = -0.02
+const WIND = 0.6
 
 /** Keep below unchanged */
 
