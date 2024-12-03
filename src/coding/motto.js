@@ -1,8 +1,8 @@
 /**
  *  You set your style values below
  */
-const FIRST_LINE = " I am edward."
-const SECOND_LINE = "I win the game."
+const FIRST_LINE = " I am Merrya."
+const SECOND_LINE = "I am 8 years old."
 const RADIUS = 50
 const PSIZE = 3
 const WORD_SIZE = 14
