@@ -1,10 +1,10 @@
 /**
  *  You set your style values below
  */
-const FIREWORK_NUMBER = 8
+const FIREWORK_NUMBER = 10
 const SHOOT_LENGTH = 50
-const SPARKLE_LIFE = 300
-const SPARKLE_FLOWER = 20
+const SPARKLE_LIFE = 100
+const SPARKLE_FLOWER = 100
 const EXPLODE_SPEED = 20
 const SPARKLE_LENGTH = 20
 const SPARKLE_HEAD = 2.5
