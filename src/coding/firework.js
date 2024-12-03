@@ -3,12 +3,12 @@
  */
 const FIREWORK_NUMBER = 8
 const SHOOT_LENGTH = 50
-const SPARKLE_LIFE = 300
-const SPARKLE_FLOWER = 20
+const SPARKLE_LIFE = 200
+const SPARKLE_FLOWER = 200
 const EXPLODE_SPEED = 20
 const SPARKLE_LENGTH = 30
 const SPARKLE_HEAD = 2.5
-const WIND = 0.80
+const WIND = 0.4
 
 /** Keep below unchanged */
 
