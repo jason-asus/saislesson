@@ -1,5 +1,5 @@
 colors {
-  color: rgb(222, 139, 210);
+  color: rgb(151, 56, 188);
 }
 html,
 body {
@@ -9,5 +9,5 @@ body {
 
 canvas {
   display: block;
-  background-color: rgb(184, 211, 232);
+  background-color: rgb(9, 9, 9);
 }
