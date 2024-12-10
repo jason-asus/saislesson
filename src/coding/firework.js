@@ -2,11 +2,11 @@
  *  You set your style values below
  */
 const FIREWORK_NUMBER = 100
-const SHOOT_LENGTH = 99
+const SHOOT_LENGTH = 300
 const SPARKLE_LIFE = 300
-const SPARKLE_FLOWER = 99
-const EXPLODE_SPEED = 1
-const SPARKLE_LENGTH = 20
+const SPARKLE_FLOWER = 999
+const EXPLODE_SPEED = 99
+const SPARKLE_LENGTH = 99
 const SPARKLE_HEAD = 2.5
 const WIND = -0.02
 
