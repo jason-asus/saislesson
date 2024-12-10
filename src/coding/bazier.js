@@ -1,9 +1,9 @@
 /** settings */
 
-let COLOR = [255, 0, 0]
-let STROKE_WEIGHT = 5
-let OFFSET_INC = 5
-let OFFSET_INIT = [1, 2, 3, 4, 5, 6, 7, 8]
+let COLOR = [0, 0, 225]
+let STROKE_WEIGHT = 2
+let OFFSET_INC = 1
+let OFFSET_INIT = [1, 2, 2, 4, 3, 6, 7, 1]
 
 /** code */
 let x1
