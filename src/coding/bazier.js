@@ -1,7 +1,7 @@
 /** settings */
 
-let COLOR = [255, 0, 0]
-let STROKE_WEIGHT = 20
+let COLOR = [187, 244, 177]
+let STROKE_WEIGHT = 10
 let OFFSET_INC = 10
 let OFFSET_INIT = [1, 2, 3, 4, 5, 6, 7, 8]
 
