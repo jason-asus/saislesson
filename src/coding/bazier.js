@@ -1,7 +1,7 @@
 /** settings */
 
 let COLOR = [5]
-let STROKE_WEIGHT = 5
+let STROKE_WEIGHT = 100000000
 let OFFSET_INC =5
 let OFFSET_INIT = [1, 2, 3, 4, 5, 6, 7, 8]
 

@@ -10,7 +10,7 @@ let img
 let cols, rows
 let sizes = []
 function preload() {
-  img = loadImage("harry.jpg")
+  img = loadImage("viv.jpg")
 }
 
 function setup() {
