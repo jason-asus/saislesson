@@ -1,7 +1,7 @@
 /** settings */
 let BACKGROUND_COLOR = [200, 150, 227, 150]
-let SIZE = 3
-let WORDS = "MARTIN I am aways happy.
+let SIZE = 4
+let WORDS = "MARTIN, I am always happy!"
 let STROKE = true
 let GRAIN = 150
 
