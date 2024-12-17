@@ -1,12 +1,12 @@
 // You can personize your bubbles by setting the values below
 const settings = {
   canvas: null,
-  radius: 10,
-  radiusAdd: 100,
-  bubbleNumber: 50,
-  velocity: 80,
-  bubbleColor: "rgb(175, 35, 35)", // 0 - 255
-  backgroundColor: "rgb(35, 175, 82)", // 0 - 255
+  radius: 30,
+  radiusAdd: 0,
+  bubbleNumber: 20,
+  velocity: 100,
+  bubbleColor: "rgb(122,203,202)", // 0 - 255
+  backgroundColor: "rgb(158, 231, 221)", // 0 - 255
 }
 // SETTINGS END HERE
 

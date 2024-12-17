@@ -1,12 +1,12 @@
 /**
  *  You set your style values below
  */
-const FIRST_LINE = " I am edward."
-const SECOND_LINE = "I win the game."
+const FIRST_LINE = " I am Martin"
+const SECOND_LINE = "Never give up!"
 const RADIUS = 50
 const PSIZE = 3
 const WORD_SIZE = 14
-const STROKE_COLOR = "184, 158, 231"
+const STROKE_COLOR = "151, 220, 111"
 const DOT_COLOR = "8, 1, 221"
 const MOUSE_COLOR = "71, 12, 223"
 
