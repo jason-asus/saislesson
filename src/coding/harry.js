@@ -1,8 +1,8 @@
 /** settings */
 let BACKGROUND_COLOR = [200, 150, 227, 150]
-let SIZE = 8
+let SIZE = 2
 let WORDS = "MERRY CHRISTMAS AND HAPPY NEW YEAR!"
-let STROKE = true
+let STROKE = false
 let GRAIN = 150
 
 /** code */
