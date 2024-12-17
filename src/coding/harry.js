@@ -1,7 +1,7 @@
 /** settings */
 let BACKGROUND_COLOR = [200, 150, 227, 150]
-let SIZE = 8
-let WORDS = "MERRY CHRISTMAS AND HAPPY NEW YEAR!"
+let SIZE = 5
+let WORDS = "I AM EDWARD I am happy!"
 let STROKE = true
 let GRAIN = 150
 
@@ -10,7 +10,7 @@ let img
 let cols, rows
 let sizes = []
 function preload() {
-  img = loadImage("harry.jpg")
+  img = loadImage("edward.jpg")
 }
 
 function setup() {
