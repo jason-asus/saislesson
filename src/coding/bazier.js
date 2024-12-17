@@ -1,8 +1,8 @@
 /** settings */
 
 let COLOR = [255, 0, 25]
-let STROKE_WEIGHT = 5
-let OFFSET_INC = 0.5
+let STROKE_WEIGHT = 1
+let OFFSET_INC = 0.1
 let OFFSET_INIT = [, 36, 78, 43, 98, 10, 50, 87]
 
 /** code */
