@@ -1,3 +1,8 @@
+/** Settings */
+const FLAKE_NUMBER = 300
+const FLAKE_SIZE = 200
+
+/** code lines */
 let snow
 
 function setup() {
@@ -19,17 +24,17 @@ function snowStorm() {
   this.breeze = [] /// Adds a wind force using noise
   this.rot = [] /// Spin the snowflakes
   this.yoff = [] /// Each flake's unique noise value
-  let dense = 175 /// How many flakes
+  // let FLAKE_NUMBER = 175 /// How many flakes
   let sizeset = 0 /// Set the size based on order in array.
 
-  for (let i = 0; i < dense; i++) {
+  for (let i = 0; i < FLAKE_NUMBER; i++) {
     this.yoff.push(random(1000))
     this.pos.push(createVector(random(width), random(height)))
 
     /// Set the size using lerp.  This will make more small
     /// flakes with fewer large ones to add depth to the scene.
     sizeset = lerp(sizeset, 5, 0.1)
-    this.size.push(7 - sizeset)
+    this.size.push(FLAKE_SIZE / 100 + 5 - sizeset)
 
     /// Smaller flakes are in the distance, and should fall
     /// slower to maintain perspective.  Set velocities to scale.
@@ -45,7 +50,7 @@ function snowStorm() {
   }
 
   this.update = function () {
-    for (let i = 0; i < dense; i++) {
+    for (let i = 0; i < FLAKE_NUMBER; i++) {
       this.yoff[i] += 0.05
       this.pos[i].add(this.vel[i])
 
