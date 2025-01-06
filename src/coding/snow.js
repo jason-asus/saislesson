@@ -1,18 +1,21 @@
 /** Settings */
 const FLAKE_NUMBER = 300
 const FLAKE_SIZE = 200
+const COLOR = [255, 255, 255]
+const BACKGROUND_COLOR = [0, 0, 0]
 
 /** code lines */
 let snow
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
+  colorMode(RGB, 255)
+
   snow = new snowStorm()
-  background(0, 255)
 }
 
 function draw() {
-  background(0, 255)
+  background(...BACKGROUND_COLOR)
   snow.update()
 }
 
@@ -92,9 +95,9 @@ function snowStorm() {
       push()
       /// Brighter colors in front (large flakes),
       /// dimmer colors in back (small flakes).
-      let scol = map(this.size[i], 1, 5, 64, 255)
-      stroke(scol, 150)
-      // stroke(0,scol,scol,150);
+      let brightness = map(this.size[i], 1, 5, 32, 255)
+      // stroke(brightness, 150)
+      stroke(...COLOR, brightness)
       strokeWeight(this.size[i])
 
       push()

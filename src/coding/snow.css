@@ -1,6 +1,11 @@
 colors {
-  color: rgb(165, 194, 227);
+  color: rgb(185, 72, 205);
 }
+
+background-color {
+  color: rgb(106, 166, 188);
+}
+
 html,
 body {
   margin: 0;
@@ -9,5 +14,5 @@ body {
 
 canvas {
   display: block;
-  background-color: rgb(184, 211, 232);
+  /* background-color: rgb(181, 203, 219); */
 }
