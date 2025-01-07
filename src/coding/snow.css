@@ -1,0 +1,18 @@
+colors {
+  color: rgb(185, 72, 205);
+}
+
+background-color {
+  color: rgb(106, 166, 188);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  /* background-color: rgb(181, 203, 219); */
+}
