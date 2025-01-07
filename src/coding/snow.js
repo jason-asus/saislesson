@@ -1,6 +1,6 @@
 /** Settings */
 const FLAKE_NUMBER = 300
-const FLAKE_SIZE = 200
+const FLAKE_SIZE = 300
 const COLOR = [255, 255, 255]
 const BACKGROUND_COLOR = [0, 0, 0]
 
