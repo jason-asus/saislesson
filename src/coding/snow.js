@@ -1,8 +1,8 @@
 /** Settings */
-const FLAKE_NUMBER = 300
+const FLAKE_NUMBER = 1000
 const FLAKE_SIZE = 200
-const COLOR = [255, 255, 255]
-const BACKGROUND_COLOR = [0, 0, 0]
+const COLOR = [55, 255, 55]
+const BACKGROUND_COLOR = [255, 255, 255]
 
 /** code lines */
 let snow
