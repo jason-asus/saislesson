@@ -1,0 +1,43 @@
+.colors {
+  color: rgb(158, 231, 221);
+}
+
+/* do not change the css values below */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(205, 200, 200);
+}
+
+#cnvs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#audio1 {
+  width: 50%;
+  margin: 10px auto;
+  display: block;
+}
+
+#fileload {
+  position: absolute;
+  top: 80px;
+  left: 500px;
+  width: 25%;
+  z-index: 100;
+  color: white;
+}
