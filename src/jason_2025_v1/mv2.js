@@ -73,19 +73,22 @@ fileload.addEventListener("change", function () {
     }
 
     // rect collision
-    if (rect2x == rectx + rectwidth) {
+    if (rect2x == rectx + rectwidth && rect2y == recty + rectheight) {
       rect2vx = 1;
       rectvx = -1;
-    } else if (rect2x == rectx - rectwidth) {
+    } else if (rect2x == rectx - rectwidth && rect2y == recty + rectheight) {
       rect2vx = -1;
       rectvx = 1;
     }
 
-    // if (rect2y == recty - 200) {
-    //     rect2vy = 1;
-    //   } else if (rect2y < 0) {
-    //     rect2vy = 1;
-    //   }
+    if (rect2y == recty - rectheight && rect2x == rectx + rectwidth) {
+      rect2vy = -1;
+      rectvy = 1;
+    } else if (rect2y == recty + rectheight && rect2x == rectx + rectwidth) {
+      rect2vy = -1;
+      rectvy = 1;
+    }
+
     // analyser.getByteFrequencyData(dataArr) // array of values , each represents volume of the frequency
 
     // musicVisualiser(bufferLenght, x, barWidth, barHeight, dataArr) //mv
