@@ -30,63 +30,63 @@ fileload.addEventListener("change", function () {
   // let barHeight
   // let x
   let rectx = 0;
-  let rectvx = 1;
+  let rectvx = Math.random(10) + 1;
   let recty = 100;
-  let rectvy = 1;
+  let rectvy = Math.random(10) + 1;
   let rect2x = 400;
-  let rect2vx = 1;
+  let rect2vx = Math.random(10) + 1;
   let rect2y = 200;
-  let rect2vy = 1;
-  let rectheight = 50;
-  let rectwidth = 50;
+  let rect2vy = Math.random(10) + 1;
+  let rectheight = 100;
+  let rectwidth = 100;
 
   function animate() {
-    // x = 0
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     rectx += rectvx;
     recty += rectvy;
     ctx.fillStyle = "red ";
     ctx.fillRect(rectx, recty, rectwidth, rectheight);
     if (rectx > canvas.width - rectwidth) {
-      rectvx = -1;
+      rectvx *= -1;
     } else if (rectx < 0) {
-      rectvx = 1;
+      rectvx *= -1;
     }
     if (recty > canvas.height - rectheight) {
-      rectvy = -1;
+      rectvy *= -1;
     } else if (recty < 0) {
-      rectvy = 1;
+      rectvy *= -1;
     }
+
     rect2x += rect2vx;
     rect2y += rect2vy;
     ctx.fillStyle = " green ";
     ctx.fillRect(rect2x, rect2y, rectwidth, rectheight);
     if (rect2x > canvas.width - rectwidth) {
-      rect2vx = -1;
+      rect2vx *= -1;
     } else if (rect2x < 0) {
-      rect2vx = 1;
+      rect2vx *= -1;
     }
     if (rect2y > canvas.height - rectheight) {
-      rect2vy = -1;
+      rect2vy *= -1;
     } else if (rect2y < 0) {
-      rect2vy = 1;
+      rect2vy *= -1;
     }
 
     // rect collision
-    if (rect2x == rectx + rectwidth && rect2y == recty + rectheight) {
-      rect2vx = 1;
-      rectvx = -1;
-    } else if (rect2x == rectx - rectwidth && rect2y == recty + rectheight) {
-      rect2vx = -1;
-      rectvx = 1;
+    if (
+      Math.abs(rect2x - rectx) < rectwidth &&
+      Math.abs(rect2y - recty) < rectheight
+    ) {
+      rect2vx *= -1;
+      rectvx *= -1;
     }
 
-    if (rect2y == recty - rectheight && rect2x == rectx + rectwidth) {
-      rect2vy = -1;
-      rectvy = 1;
-    } else if (rect2y == recty + rectheight && rect2x == rectx + rectwidth) {
-      rect2vy = -1;
-      rectvy = 1;
+    if (
+      Math.abs(rect2y - recty) < rectheight &&
+      Math.abs(rect2x - rectx) < rectwidth
+    ) {
+      rect2vy *= -1;
+      rectvy *= -1;
     }
 
     // analyser.getByteFrequencyData(dataArr) // array of values , each represents volume of the frequency
