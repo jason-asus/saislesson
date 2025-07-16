@@ -30,6 +30,10 @@ fileload.addEventListener("change", function () {
   // let barHeight
   // let x
   let rectx = 0;
+  let rect3x = 0;
+  let rect3y = 0;
+  let rect3vx = Math.random() * 4 + 1;
+  let rect3vy = Math.random() * 4 + 2;
   let rectvx = Math.random() * 4 + 1;
   let recty = 100;
   let rectvy = Math.random() * 4 + 2;
@@ -39,6 +43,8 @@ fileload.addEventListener("change", function () {
   let rect2vy = Math.random() * 4 + 2;
   let rectheight = 100;
   let rectwidth = 100;
+
+  let rectArr = []
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -63,13 +69,17 @@ fileload.addEventListener("change", function () {
     ctx.fillRect(rect2x, rect2y, rectwidth, rectheight);
     if (rect2x > canvas.width - rectwidth) {
       rect2vx *= -1;
+      
     } else if (rect2x < 0) {
       rect2vx *= -1;
+      
     }
     if (rect2y > canvas.height - rectheight) {
       rect2vy *= -1;
+      
     } else if (rect2y < 0) {
       rect2vy *= -1;
+      
     }
 
     // rect collision
@@ -79,6 +89,8 @@ fileload.addEventListener("change", function () {
     ) {
       rect2vx *= -1;
       rectvx *= -1;
+      ctx.fillStyle = "green ";
+      ctx.fillRect(rect3x, rect3y, rectwidth, rectheight);
     }
 
     if (
@@ -87,6 +99,9 @@ fileload.addEventListener("change", function () {
     ) {
       rect2vy *= -1;
       rectvy *= -1;
+      ctx.fillStyle = "green ";
+      ctx.fillRect(rect3x, rect3y, rectwidth, rectheight);
+     
     }
 
     // analyser.getByteFrequencyData(dataArr) // array of values , each represents volume of the frequency
