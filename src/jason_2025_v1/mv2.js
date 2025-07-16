@@ -30,7 +30,7 @@ fileload.addEventListener("change", function () {
   // let barHeight
   // let x
   let rectx = 0;
-  let rectvx = Math.random() * 4 + 2;
+  let rectvx = Math.random() * 4 + 1;
   let recty = 100;
   let rectvy = Math.random() * 4 + 2;
   let rect2x = 400;
