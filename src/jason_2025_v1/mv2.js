@@ -29,11 +29,8 @@ fileload.addEventListener("change", function () {
   // const barWidth = canvas.width / bufferLenght / 2
   // let barHeight
   // let x
-  let rectx = 0;
-  let rect3x = 0;
-  let rect3y = 0;
-  let rect3vx = Math.random() * 4 + 1;
-  let rect3vy = Math.random() * 4 + 2;
+
+  
   let rectvx = Math.random() * 4 + 1;
   let recty = 100;
   let rectvy = Math.random() * 4 + 2;
@@ -44,14 +41,20 @@ fileload.addEventListener("change", function () {
   let rectheight = 100;
   let rectwidth = 100;
 
-  let rectArr = []
+  // let forloop rect = []
+  let rects =[{x:0,y:100,vx:Math.random() * 4 + 1,vy:Math.random() * 4 + 2},{x:0,y:100,vx:Math.random() * 4 + 1,vy:Math.random() * 4 + 2}]
+
+
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     rectx += rectvx;
     recty += rectvy;
-    ctx.fillStyle = "red ";
-    ctx.fillRect(rectx, recty, rectwidth, rectheight);
+    for(let rects of rects){
+      ctx.fillStyle = "red ";
+      ctx.fillRect(rects.x, recty, rectwidth, rectheight);
+    }
+    
     if (rectx > canvas.width - rectwidth) {
       rectvx *= -1;
     } else if (rectx < 0) {
@@ -89,8 +92,7 @@ fileload.addEventListener("change", function () {
     ) {
       rect2vx *= -1;
       rectvx *= -1;
-      ctx.fillStyle = "green ";
-      ctx.fillRect(rect3x, rect3y, rectwidth, rectheight);
+     
     }
 
     if (
@@ -99,8 +101,7 @@ fileload.addEventListener("change", function () {
     ) {
       rect2vy *= -1;
       rectvy *= -1;
-      ctx.fillStyle = "green ";
-      ctx.fillRect(rect3x, rect3y, rectwidth, rectheight);
+     
      
     }
 
