@@ -13,8 +13,13 @@ let rectSize = 50
 let rects = [];
 for (let i = 0; i < 11; i++) {
   rects.push({
-    x: i*60,
+    x: i * 60,
     y: 100,
+    rgb: {
+      r: Math.random() * 255,
+      g: Math.random() * 255,
+      b: Math.random() * 255,
+    },
     vx: Math.random() * 4 + 1,
     vy: Math.random() * 4 + 2,
   });
@@ -33,9 +38,12 @@ fileload.addEventListener("change", function () {
       ctx.fillRect(rect.x, rect.y, rectSize, rectSize);
       rect.x += rect.vx;
       rect.y += rect.vy;
+
+      ctx.fillStyle = `rgb(${rect.rgb.r},${rect.rgb.g},${rect.rgb.b})`;
+
     }
 
-    ctx.fillStyle = "green";
+
 
     requestAnimationFrame(animate);
   }
