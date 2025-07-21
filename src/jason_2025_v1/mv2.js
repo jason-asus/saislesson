@@ -13,7 +13,7 @@ let rectSize = 50
 let rects = [];
 for (let i = 0; i < 11; i++) {
   rects.push({
-    x: i * 60,
+    x: i * 120,
     y: 100,
     rgb: {
       r: Math.random() * 255,
@@ -38,6 +38,19 @@ fileload.addEventListener("change", function () {
       ctx.fillRect(rect.x, rect.y, rectSize, rectSize);
       rect.x += rect.vx;
       rect.y += rect.vy;
+       // X collision
+      if (rect.x > canvas.width - rectSize) {
+      rect.vx = -1
+      } else if (rect.x < 0){
+        rect.vx = 1
+      }
+      // Y collision
+       if (rect.y > canvas.height - rectSize) {
+      rect.vy = -1
+      } else if (rect.y < 0){
+        rect.vy = 1
+      }
+      
 
       ctx.fillStyle = `rgb(${rect.rgb.r},${rect.rgb.g},${rect.rgb.b})`;
 
