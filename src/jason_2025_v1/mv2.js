@@ -11,7 +11,7 @@ let audioSource;
 let rectSize = 50;
 
 let rects = [];
-for (let i = 0; i < 11; i++) {
+for (let i = 0; i < 5; i++) {
   rects.push({
     x: i * 120,
     y: 100,
@@ -35,25 +35,7 @@ fileload.addEventListener("change", function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let [index, rect] of rects.entries()) {
-      // nested loop
-      for (let [_index, _rect] of rects.entries()) {
-        if (index != _index) {
-          // horizontal collision
-          if (
-            Math.abs(rect.x - _rect.x) <= rectSize &&
-            Math.abs(rect.y - _rect.y) < rectSize
-          ) {
-            rect.vx *= -1;
-          }
-          // vertical collision
-          if (
-            Math.abs(rect.y - _rect.y) <= rectSize &&
-            Math.abs(rect.x - _rect.x) < rectSize
-          ) {
-            rect.vy *= -1;
-          }
-        }
-      }
+      //
 
       ctx.fillStyle = `rgb(${rect.rgb.r},${rect.rgb.g},${rect.rgb.b})`;
       //draw rect
@@ -73,6 +55,53 @@ fileload.addEventListener("change", function () {
         rect.vy *= -1;
       } else if (rect.y < 0) {
         rect.vy *= -1;
+      }
+      // nested loop
+      for (let [_index, _rect] of rects.entries()) {
+        if (index != _index) {
+          // horizontal collision
+          if (
+            Math.abs(rect.x - _rect.x) < rectSize+20 &&
+            Math.abs(rect.x - _rect.x) > rectSize - 20 &&
+            Math.abs(rect.y - _rect.y) < rectSize
+          ) {
+            rect.vx *= -1;
+            if (rects.length < 30) {
+              rects.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                rgb: {
+                  r: Math.random() * 255,
+                  g: Math.random() * 255,
+                  b: Math.random() * 255,
+                },
+                vx: Math.random() * 4 + 1,
+                vy: Math.random() * 4 + 2,
+              });
+            }
+          }
+          // vertical collision
+          if (
+            Math.abs(rect.y - _rect.y) < rectSize+20 &&
+            Math.abs(rect.y - _rect.y) > rectSize - 20 &&
+            Math.abs(rect.x - _rect.x) < rectSize
+          ) {
+            rect.vy *= -1;
+            if (rects.length < 30) {
+              rects.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                rgb: {
+                  r: Math.random() * 255,
+                  g: Math.random() * 255,
+                  b: Math.random() * 255,
+                },
+                vx: Math.random() * 4 + 1,
+                vy: Math.random() * 4 + 2,
+              });
+            }
+          }
+        }
       }
     }
 
