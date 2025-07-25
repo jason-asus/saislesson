@@ -46,81 +46,50 @@ fileload.addEventListener("change", function () {
   audio1.src = URL.createObjectURL(this.files[0]);
   audio1.load();
   audio1.play();
+});
 
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let [index, rect] of rects.entries()) {
-      //
+  for (let [index, rect] of rects.entries()) {
+    //
 
-      // nested loop
-      for (let [_index, _rect] of rects.entries()) {
-        if (index != _index) {
-          // horizontal collision
-          if (
-            rect.x - _rect.x > 0 &&
-            rect.x - _rect.x <= rectSize &&
-            Math.abs(rect.y - _rect.y) < rectSize
-          ) {
-            rect.vx = Math.abs(rect.vx);
-
-            addRect();
-          }
-          //
-          if (
-            rect.x - _rect.x < 0 &&
-            _rect.x - rect.x <= rectSize &&
-            Math.abs(rect.y - _rect.y) < rectSize
-          ) {
-            rect.vx = -Math.abs(rect.vx);
-            // addRect();
-          }
-
-          // vertical collision
-          if (
-            rect.y - _rect.y > 0 &&
-            rect.y - _rect.y <= rectSize &&
-            Math.abs(rect.x - _rect.x) < rectSize
-          ) {
-            rect.vy = Math.abs(rect.vy);
-            addRect();
-          }
-          //
-          if (
-            rect.y - _rect.y < 0 &&
-            _rect.y - rect.y <= rectSize &&
-            Math.abs(rect.x - _rect.x) < rectSize
-          ) {
-            rect.vy = -Math.abs(rect.vy);
-            // addRect();
-          }
+    // nested loop
+    for (let [indez, rectz] of rects.entries()) {
+      if (index != indez) {
+        if (rectz.x + rectSize < rect.x && rectz.x < rect.x && Math.abs( rectz.y - rect.y)<rectSize){
+          rect.vx = Math.abs(rect.vx);
+              rectz.vx = Math.abs(rectz.vx) *-1;
+        } else if (rectz.x < rect.x + rectSize && rectz.x > rect.x  && Math.abs( rectz.y - rect.y)<rectSize) {
+          rect.vx = Math.abs(rect.vx) *-1;
+             rectz.vx = Math.abs(rectz.vx) *1;
         }
       }
-
-      //
-
-      // X border collision
-      if (rect.x >= canvas.width - rectSize) {
-        rect.vx *= -1;
-      } else if (rect.x <= 0) {
-        rect.vx *= -1;
-      }
-      // Y border collision
-      if (rect.y >= canvas.height - rectSize) {
-        rect.vy *= -1;
-      } else if (rect.y <= 0) {
-        rect.vy *= -1;
-      }
-      //
-      ctx.fillStyle = `rgb(${rect.rgb.r},${rect.rgb.g},${rect.rgb.b})`;
-      //draw rect
-      ctx.fillRect(rect.x, rect.y, rectSize, rectSize);
-      // move position
-      rect.x += rect.vx;
-      rect.y += rect.vy;
     }
 
-    requestAnimationFrame(animate);
+    //
+
+    // X border collision
+    if (rect.x >= canvas.width - rectSize) {
+      rect.vx *= -1;
+    } else if (rect.x <= 0) {
+      rect.vx *= -1;
+    }
+    // Y border collision
+    if (rect.y >= canvas.height - rectSize) {
+      rect.vy *= -1;
+    } else if (rect.y <= 0) {
+      rect.vy *= -1;
+    }
+    //
+    ctx.fillStyle = `rgb(${rect.rgb.r},${rect.rgb.g},${rect.rgb.b})`;
+    //draw rect
+    ctx.fillRect(rect.x, rect.y, rectSize, rectSize);
+    // move position
+    rect.x += rect.vx;
+    rect.y += rect.vy;
   }
-  animate();
-});
+
+  requestAnimationFrame(animate);
+}
+animate();
